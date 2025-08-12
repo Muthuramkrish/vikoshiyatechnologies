@@ -45,10 +45,10 @@ const SitemapModal = ({ isOpen, onClose }) => {
           <div className="mt-6 bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
             <p className="text-gray-600">
-              123 Main Street, Suite 400<br />
-              Cityville, Country<br />
+            4/786, Veeraperumal kovil street, <br />
+            Soolakkarai, Virudhunagar - 626 003<br />
               <strong>Phone:</strong> +1 (234) 567-890<br />
-              <strong>Email:</strong> info@vikoshiya.com
+              <strong>Email:</strong> info@vikoshiyatechnologies.com
             </p>
           </div>
         </div>

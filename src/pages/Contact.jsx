@@ -72,17 +72,17 @@ const Contact = () => {
   return (
     <>
       {/* Contact Content */}
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen bg-gray-50  py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Contact Info */}
             <div className="flex-1 flex flex-col justify-center text-lg md:text-xl gap-5">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Office</h3>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-sm md:text-base">
                 <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6 text-blue-600">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
                 </svg>
-                123 Main Street, Suite 400, Cityville, Country
+                4/786, Veeraperumal kovil street, Soolakkarai, Virudhunagar - 626 003
               </div>
               <iframe 
                 className="w-full h-48 rounded-lg shadow-lg"
@@ -104,8 +104,8 @@ const Contact = () => {
                   <path d="M4 4h16v16H4z"/>
                   <path d="M22 6l-10 7L2 6"/>
                 </svg>
-                <a href="mailto:info@vikoshiya.com" className="text-gray-700 hover:text-blue-600 transition-colors">
-                  info@vikoshiya.com
+                <a href="mailto:info@vikoshiyatechnologies.com" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  info@vikoshiyatechnologies.com
                 </a>
               </div>
               <div className="flex gap-5 mt-4">
@@ -118,6 +118,9 @@ const Contact = () => {
                 <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors">
                   <i className="fab fa-linkedin"></i>
                 </a>
+                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700" aria-label="Whatsapp">
+                  <i className="fab fa-whatsapp"></i>
+                </a>
               </div>
             </div>
 

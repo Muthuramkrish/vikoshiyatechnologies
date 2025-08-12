@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer.jsx'
+import CTASection from '../components/CTASection.jsx'
 
 const About = () => {
   return (
@@ -40,13 +41,13 @@ const About = () => {
                 At Vikoshiya Technologies, we're more than just an IT company — we're part of a journey that started back in 2012.
               </p>
               <p className="text-lg text-gray-600 mb-4 text-justify">
-                It all began in Singapore, where we laid our foundation in the electrical and instrumentation field. Over the years, we've expanded into media (2015) and infrastructure (2016), and now, in 2024, we've stepped into the world of technology with a new chapter based in Virudhunagar, India.
+                It all began in Singapore, where we laid our foundation in the electrical and instrumentation field. Over the years, we've expanded into media (2015) and infrastructure (2016), and now, in 2025, we've stepped into the world of technology with a new chapter based in Virudhunagar, India.
               </p>
               <p className="text-lg text-gray-600 mb-4 text-justify">
                 With over a decade of experience behind us, we understand what it takes to build something that lasts. Whether it's a circuit, a building, a brand, or a website — we believe in doing things with quality, care, and commitment.
               </p>
               <p className="text-lg text-gray-600 mb-6 text-justify">
-                Vikoshiya Technologies is a full-stack web solutions provider, offering modern IT services, design, and digital transformation. Alongside our core tech services, we also operate a specialized eCommerce platform Vikoshiya Shop, delivering handpicked tech and utility products to customers nationwide.
+                Vikoshiya Technologies is a full-stack web solutions provider, offering modern IT services, design, and digital transformation. Alongside our core tech services, we also operate a specialized eCommerce platform vikoshiya india Shop, delivering handpicked tech and utility products to customers nationwide.
               </p>
               <p className="text-lg text-gray-600 text-justify">
                 We're a small team with big values — honest work, lasting relationships, and smart solutions that actually work. If you're looking for a tech partner who's in it for the long run, we'd love to be part of your journey.
@@ -94,7 +95,7 @@ const About = () => {
                 <div className="w-1/2 pr-8"></div>
                 <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg hover:scale-125 hover:bg-blue-500 transition-all duration-300"></div>
                 <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-bold text-gray-900">2024</h3>
+                  <h3 className="text-xl font-bold text-gray-900">2025</h3>
                   <p className="text-gray-600">Launched technology division in Virudhunagar, India</p>
                 </div>
               </div>
@@ -110,7 +111,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What We Do</h2>
             <p className="text-xl text-gray-600">Comprehensive technology solutions for modern businesses</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-blue-50 p-8 rounded-lg text-center hover:scale-105 hover:shadow-xl hover:bg-blue-100 transition-all duration-300 cursor-pointer">
               <i className="fas fa-laptop-code text-blue-600 text-4xl mb-6 hover:scale-110 transition-transform duration-300"></i>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Web Development</h3>
@@ -123,6 +124,13 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Quality Assurance</h3>
               <p className="text-gray-600 text-lg">
                 Comprehensive testing services to ensure your applications meet the highest quality standards before launch.
+              </p>
+            </div>
+            <div className="bg-blue-50 p-8 rounded-lg text-center hover:scale-105 hover:shadow-xl hover:bg-blue-100 transition-all duration-300 cursor-pointer">
+              <i className="fas fa-shopping-cart text-blue-600 text-4xl mb-6 hover:scale-110 transition-transform duration-300"></i>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Ecommerce Web Solutions</h3>
+              <p className="text-gray-600 text-lg">
+                Powerful, scalable, and secure ecommerce platforms tailored to grow your online business and enhance customer experience.
               </p>
             </div>
           </div>
@@ -222,29 +230,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Work Together?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            We're proud of where we've come from, and even more excited about where we're going. Let's build something meaningful — together.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/contact"
-              className="bg-white hover:bg-gray-100 text-blue-700 px-6 py-3 rounded-md text-lg font-medium transition duration-300"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              to="/#services"
-              className="bg-transparent hover:bg-blue-600 text-white border-2 border-white px-6 py-3 rounded-md text-lg font-medium transition duration-300"
-            >
-              Our Services
-            </Link>
-          </div>
-        </div>
-      </section>
+ {/* CTA Section */}
+ <CTASection />
 
       {/* Footer */}
       <Footer />

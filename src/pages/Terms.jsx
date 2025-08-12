@@ -3,23 +3,13 @@ import Footer from '../components/Footer.jsx'
 const Terms = () => {
   return (
     <>
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Terms of Service</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Clear, transparent terms that govern our web development and quality assurance partnership
-          </p>
-        </div>
-      </div>
-
       {/* Terms Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Terms of Service</h2>
-              <p className="text-gray-600 mb-4">Last updated: January 2024</p>
+              <p className="text-gray-600 mb-4">Last updated: August 2025</p>
               <p className="text-gray-600">
                 Welcome to Vikoshiya Technologies. These Terms of Service govern your use of our web development, 
                 quality assurance, and IT consulting services. By engaging our services, you agree to these terms.
@@ -219,7 +209,7 @@ const Terms = () => {
                     <div>
                       <p className="text-gray-600">
                         <strong>Legal Department:</strong><br />
-                        Email: legal@vikoshiya.com<br />
+                        Email: legal@vikoshiyatechnologies.com<br />
                         Phone: +1 (234) 567-890
                       </p>
                     </div>
@@ -227,8 +217,8 @@ const Terms = () => {
                       <p className="text-gray-600">
                         <strong>Mailing Address:</strong><br />
                         Vikoshiya Technologies<br />
-                        123 Main Street, Suite 400<br />
-                        Cityville, Country 12345
+                        4/786, Veeraperumal kovil street, <br />
+                        Soolakkarai, Virudhunagar - 626 003
                       </p>
                     </div>
                   </div>

@@ -113,7 +113,10 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Web Development Card */}
-            <div className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <Link 
+              to="/web-development" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
               <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <i className="fas fa-laptop-code text-blue-600 text-xl"></i>
               </div>
@@ -126,16 +129,16 @@ const Home = () => {
                 alt="Developers coding a website with modern UI elements on screen"
                 className="w-full rounded-md mb-4"
               />
-              <Link 
-                to="/web-development" 
-                className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
-              >
+              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
                 Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </Link>
-            </div>
+              </span>
+            </Link>
 
             {/* Quality Assurance Card */}
-            <div className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <Link 
+              to="/quality-assurance" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
               <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <i className="fas fa-check-double text-blue-600 text-xl"></i>
               </div>
@@ -148,16 +151,16 @@ const Home = () => {
                 alt="Quality assurance specialist testing application on multiple devices"
                 className="w-full rounded-md mb-4"
               />
-              <Link 
-                to="/quality-assurance" 
-                className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
-              >
+              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
                 Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </Link>
-            </div>
+              </span>
+            </Link>
 
             {/* Ecommerce Website Development Card */}
-            <div className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <Link 
+              to="/ecommerce" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
               <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <i className="fas fa-shopping-cart text-blue-600 text-xl"></i>
               </div>
@@ -170,13 +173,10 @@ const Home = () => {
                 alt="Modern ecommerce workspace with laptop and shopping cart"
                 className="w-full rounded-md mb-4"
               />
-              <Link 
-                to="/ecommerce" 
-                className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
-              >
+              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
                 Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </Link>
-            </div>
+              </span>
+            </Link>
           </div>
         </div>
       </section>

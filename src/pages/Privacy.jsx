@@ -3,23 +3,13 @@ import Footer from '../components/Footer.jsx'
 const Privacy = () => {
   return (
     <>
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Privacy Policy</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Your privacy is our priority. Learn how we protect your data while delivering exceptional web development and quality assurance services.
-          </p>
-        </div>
-      </div>
-
       {/* Privacy Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Privacy Policy</h2>
-              <p className="text-gray-600 mb-4">Last updated: January 2024</p>
+              <p className="text-gray-600 mb-4">Last updated: August 2025</p>
               <p className="text-gray-600">
                 At Vikoshiya Technologies, we are committed to protecting your privacy and ensuring the security of your personal information. 
                 This Privacy Policy explains how we collect, use, and safeguard your data when you use our web development and quality assurance services.
@@ -172,7 +162,7 @@ const Privacy = () => {
                     <div>
                       <p className="text-gray-600">
                         <strong>Privacy Officer:</strong><br />
-                        Email: privacy@vikoshiya.com<br />
+                        Email: privacy@vikoshiyatechnologies.com<br />
                         Phone: +1 (234) 567-890
                       </p>
                     </div>
@@ -180,8 +170,8 @@ const Privacy = () => {
                       <p className="text-gray-600">
                         <strong>Mailing Address:</strong><br />
                         Vikoshiya Technologies<br />
-                        123 Main Street, Suite 400<br />
-                        Cityville, Country 12345
+                        4/786, Veeraperumal kovil street, <br />
+                        Soolakkarai, Virudhunagar - 626 003
                       </p>
                     </div>
                   </div>

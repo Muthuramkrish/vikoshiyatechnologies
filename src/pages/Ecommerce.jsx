@@ -10,7 +10,7 @@ const Ecommerce = () => {
       <section 
         className="relative w-full h-[100vh] flex items-center justify-center mb-12" 
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
