@@ -1,11 +1,58 @@
 import { useParams, Link } from 'react-router-dom'
+import { useState } from 'react'
 import Footer from '../components/Footer.jsx'
 import CTASection from '../components/CTASection.jsx'
 import ArticleSummary from '../components/ArticleSummary.jsx'
 import RelatedArticles from '../components/RelatedArticles.jsx'
 
+// Image Popup Modal Component
+const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt, authorName }) => {
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div className="relative max-w-2xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl">
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 z-10 transition-all duration-200"
+          aria-label="Close modal"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        {/* Image */}
+        <div className="relative">
+          <img 
+            src={imageSrc} 
+            alt={imageAlt}
+            className="w-full h-auto max-h-[70vh] object-contain"
+          />
+          
+          {/* Author name overlay */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+            <h3 className="text-white text-xl font-semibold">{authorName}</h3>
+            <p className="text-gray-200 text-sm">Author Profile Picture</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Click outside to close */}
+      <div 
+        className="absolute inset-0 -z-10" 
+        onClick={onClose}
+        aria-label="Close modal"
+      />
+    </div>
+  )
+}
+
 const BlogPost = () => {
   const { id } = useParams()
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
+  const [selectedImage, setSelectedImage] = useState(null)
 
   // Blog posts data with structured content for better AI identification
   const blogPosts = [
@@ -133,11 +180,11 @@ const BlogPost = () => {
         <p>When starting a business website, one of the first tech decisions you'll face is whether to go with plain React or a framework like Next.js. Both are powerful—but they serve different purposes. Since we build most of our client projects at Vikoshiya Technologies using React, I wanted to share why we made that choice—and why it might be right for your business too.</p>
     
         <h2>Understanding the Basics</h2>
-        <p><strong>React</strong> is a JavaScript library for building UI components. It’s flexible, fast, and highly customizable. Think of it like the engine of a car—you can build what you want, your way.</p>
-        <p><strong>Next.js</strong> is a React-based framework that adds structure, routing, and server-side features. It’s great for SEO-heavy and content-focused sites.</p>
+        <p><strong>React</strong> is a JavaScript library for building UI components. It's flexible, fast, and highly customizable. Think of it like the engine of a car—you can build what you want, your way.</p>
+        <p><strong>Next.js</strong> is a React-based framework that adds structure, routing, and server-side features. It's great for SEO-heavy and content-focused sites.</p>
     
         <h2>Where React Shines (And Why We Use It)</h2>
-        <p>Here’s why I personally prefer React for most business web applications:</p>
+        <p>Here's why I personally prefer React for most business web applications:</p>
         <ul>
           <li><strong>Complete Flexibility:</strong> React lets us control every part of the architecture, so we can tailor solutions exactly to business requirements.</li>
           <li><strong>Single Page Application (SPA):</strong> For modern apps with dashboards, forms, and interactions, SPAs built in React give a faster and smoother experience.</li>
@@ -150,11 +197,11 @@ const BlogPost = () => {
         <ul>
           <li>You need <strong>server-side rendering (SSR)</strong> for SEO-heavy pages like blogs or news portals.</li>
           <li>You want built-in routing and API handling out of the box.</li>
-          <li>You’re building a content-rich marketing site where SEO is a top priority.</li>
+          <li>You're building a content-rich marketing site where SEO is a top priority.</li>
         </ul>
     
         <h2>Performance & SEO</h2>
-        <p>People often say Next.js is better for SEO—but with proper meta tags, dynamic routing, and tools like React Helmet, we’ve consistently achieved excellent SEO results in our React builds. Plus, React’s performance is unmatched when it comes to interactive UI and frontend speed.</p>
+        <p>People often say Next.js is better for SEO—but with proper meta tags, dynamic routing, and tools like React Helmet, we've consistently achieved excellent SEO results in our React builds. Plus, React's performance is unmatched when it comes to interactive UI and frontend speed.</p>
     
         <h2>Our Take at Vikoshiya Technologies</h2>
         <p>We build high-performance business applications, admin panels, ecommerce stores, and product UIs—all using React + Vite + Tailwind. This stack gives us the power to move fast and customize deeply without unnecessary overhead.</p>
@@ -314,10 +361,10 @@ const BlogPost = () => {
       content: `
         <p>When you're building a web application - especially one meant for real users and real growth - testing is not optional. One of the most common questions I get from clients is: should we go with manual testing or invest in automation?</p>
     
-        <p>As someone who’s worked closely with QA engineers and managed multiple web projects at Vikoshiya Technologies, I’ve learned that the answer isn’t always black and white. Let's break it down.</p>
+        <p>As someone who's worked closely with QA engineers and managed multiple web projects at Vikoshiya Technologies, I've learned that the answer isn't always black and white. Let's break it down.</p>
     
         <h2>What Is Manual Testing?</h2>
-        <p>Manual testing is exactly what it sounds like - humans clicking through the app, checking if features behave as expected, and reporting bugs. It’s flexible, intuitive, and great for catching unexpected issues like design flaws or strange edge cases.</p>
+        <p>Manual testing is exactly what it sounds like - humans clicking through the app, checking if features behave as expected, and reporting bugs. It's flexible, intuitive, and great for catching unexpected issues like design flaws or strange edge cases.</p>
     
         <h3>When I Recommend Manual Testing:</h3>
         <ul>
@@ -327,7 +374,7 @@ const BlogPost = () => {
           <li>Quick exploratory or smoke tests</li>
         </ul>
     
-        <p>In fact, for many new client apps, we always begin with manual testing. It’s fast to set up, and allows us to iterate quickly during development sprints.</p>
+        <p>In fact, for many new client apps, we always begin with manual testing. It's fast to set up, and allows us to iterate quickly during development sprints.</p>
     
         <h2>What Is Automated Testing?</h2>
         <p>Automated testing involves writing scripts or code that test your application automatically. These tests can be run again and again - after every code change - saving time and catching bugs early.</p>
@@ -361,7 +408,7 @@ const BlogPost = () => {
     
         <h2>Final Thoughts</h2>
         <p>Manual testing is a great starting point. Automated testing is your long-term ally. If you're building a serious web app, you'll need both at different stages.</p>
-        <p>If you’re unsure which direction to go, reach out. I’d be happy to take a look at your web app and help you build a smart QA roadmap.</p>
+        <p>If you're unsure which direction to go, reach out. I'd be happy to take a look at your web app and help you build a smart QA roadmap.</p>
       `,
       date: "July 28, 2025",
       category: "Quality Assurance",
@@ -558,10 +605,10 @@ const BlogPost = () => {
         <p>Want to discuss your ecommerce project? We'd love to hear about your business and share how we can help you build an online store that actually drives sales.</p>
         <p>Contact us today:</p>
         <ul>
-          <li> Email: info@vikoshiyatechnologies.com</li>
-          <li> Phone: +91 [Your Number]</li>
-          <li> Website: vikoshiyatechnologies.com</li>
-          <li> LinkedIn: <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer">Vikoshiya Technologies</a></li>
+          <li>📧 Email: info@vikoshiyatechnologies.com</li>
+          <li>📞 Phone: +91 [Your Number]</li>
+          <li>🌐 Website: vikoshiyatechnologies.com</li>
+          <li>💼 LinkedIn: <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer">Vikoshiya Technologies</a></li>
         </ul>
         <p>At Vikoshiya Technologies, we don't just build online stores - we build digital experiences that grow your business.</p>
         <p><strong>Let's build something meaningful - together.</strong></p>
@@ -599,20 +646,20 @@ const BlogPost = () => {
         "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       content: `
-      <p>Creating a website is more than just a technical task—it’s a creative and strategic process that shapes how your brand is experienced online. One of the most frequent questions clients ask is, “How long will it take to build my website?” The answer is rarely straightforward. Some websites can be ready in a matter of days, while others require months of careful planning and execution.</p>
+      <p>Creating a website is more than just a technical task—it's a creative and strategic process that shapes how your brand is experienced online. One of the most frequent questions clients ask is, "How long will it take to build my website?" The answer is rarely straightforward. Some websites can be ready in a matter of days, while others require months of careful planning and execution.</p>
     
-      <p>The timeline depends on many factors: the complexity of your design, the availability of your content, the technology you choose, and even the speed of communication between you and your development team. In this guide, we’ll break down these factors, outline typical timelines for different website types, walk you through each development stage, and share strategies to keep your project on track without sacrificing quality.</p>
+      <p>The timeline depends on many factors: the complexity of your design, the availability of your content, the technology you choose, and even the speed of communication between you and your development team. In this guide, we'll break down these factors, outline typical timelines for different website types, walk you through each development stage, and share strategies to keep your project on track without sacrificing quality.</p>
     
       <h2>1. What Affects Website Development Time?</h2>
-      <p>Website development isn’t just about coding. A successful project blends creativity, technology, and strategy. The following factors have the biggest impact on your timeline:</p>
+      <p>Website development isn't just about coding. A successful project blends creativity, technology, and strategy. The following factors have the biggest impact on your timeline:</p>
     
       <ul>
-        <li><strong>🧱 Project Scope</strong> – The broader your site’s functionality, the longer it will take. A small, informational website can be built quickly, whereas a platform with memberships, dashboards, and real-time integrations will require significantly more work.</li>
-        <li><strong>🎨 Design Complexity</strong> – Clean and minimal templates are faster to implement than intricate, fully custom designs with animations, micro-interactions, and advanced layouts.</li>
-        <li><strong>📄 Content Availability</strong> – If your copy, images, videos, and graphics are ready early, your timeline will shrink. Waiting for content is one of the top reasons projects stall.</li>
-        <li><strong>💬 Speed of Feedback</strong> – Fast, clear feedback during design reviews and development milestones keeps the project moving forward. Delays in approvals can push timelines back by weeks.</li>
-        <li><strong>🔧 Technology & Features</strong> – Using a CMS like WordPress or Webflow can speed up delivery. However, custom-coded solutions or advanced integrations (e.g., e-commerce payment gateways, booking systems) will take longer.</li>
-        <li><strong>👨‍👩‍👧‍👦 Team Expertise</strong> – Experienced teams can anticipate challenges, make faster decisions, and deliver a polished product on time.</li>
+        <li><strong>🧱 Project Scope</strong> — The broader your site's functionality, the longer it will take. A small, informational website can be built quickly, whereas a platform with memberships, dashboards, and real-time integrations will require significantly more work.</li>
+        <li><strong>🎨 Design Complexity</strong> — Clean and minimal templates are faster to implement than intricate, fully custom designs with animations, micro-interactions, and advanced layouts.</li>
+        <li><strong>📄 Content Availability</strong> — If your copy, images, videos, and graphics are ready early, your timeline will shrink. Waiting for content is one of the top reasons projects stall.</li>
+        <li><strong>💬 Speed of Feedback</strong> — Fast, clear feedback during design reviews and development milestones keeps the project moving forward. Delays in approvals can push timelines back by weeks.</li>
+        <li><strong>🔧 Technology & Features</strong> — Using a CMS like WordPress or Webflow can speed up delivery. However, custom-coded solutions or advanced integrations (e.g., e-commerce payment gateways, booking systems) will take longer.</li>
+        <li><strong>👨‍👩‍👧‍👦 Team Expertise</strong> — Experienced teams can anticipate challenges, make faster decisions, and deliver a polished product on time.</li>
       </ul>
     
       <h2>2. How Long Does It Really Take? Estimated Timelines</h2>
@@ -626,24 +673,24 @@ const BlogPost = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Basic static site (3–5 pages)</td>
-            <td>1–2 weeks</td>
+            <td>Basic static site (3—5 pages)</td>
+            <td>1—2 weeks</td>
           </tr>
           <tr>
             <td>Small business website</td>
-            <td>2–4 weeks</td>
+            <td>2—4 weeks</td>
           </tr>
           <tr>
             <td>Medium dynamic website</td>
-            <td>4–6 weeks</td>
+            <td>4—6 weeks</td>
           </tr>
           <tr>
             <td>E-commerce website</td>
-            <td>6–10 weeks</td>
+            <td>6—10 weeks</td>
           </tr>
           <tr>
             <td>Custom web application</td>
-            <td>3–6 months+</td>
+            <td>3—6 months+</td>
           </tr>
         </tbody>
       </table>
@@ -651,12 +698,12 @@ const BlogPost = () => {
       <h2>3. The Website Development Process</h2>
       <p>A professional website project is typically divided into the following stages:</p>
       <ul>
-        <li><strong>🔍 Discovery & Planning (3–5 Days)</strong> – Defining goals, audience, features, and creating a project roadmap.</li>
-        <li><strong>✏ Wireframing & Design (1–2 Weeks)</strong> – Crafting user flows, layouts, and visual styles that align with your brand.</li>
-        <li><strong>💻 Development (2–6 Weeks or More)</strong> – Building the structure, coding features, integrating systems, and ensuring compatibility across devices and browsers.</li>
-        <li><strong>🧪 Testing & Quality Assurance (3–7 Days)</strong> – Checking for bugs, optimizing performance, and refining the design.</li>
-        <li><strong>🚀 Launch (1 Day)</strong> – Migrating the site to the live environment and ensuring a smooth release.</li>
-        <li><strong>🔧 Post-Launch Support (Ongoing)</strong> – Security updates, content updates, and new feature rollouts.</li>
+        <li><strong>🔍 Discovery & Planning (3—5 Days)</strong> — Defining goals, audience, features, and creating a project roadmap.</li>
+        <li><strong>✏️ Wireframing & Design (1—2 Weeks)</strong> — Crafting user flows, layouts, and visual styles that align with your brand.</li>
+        <li><strong>💻 Development (2—6 Weeks or More)</strong> — Building the structure, coding features, integrating systems, and ensuring compatibility across devices and browsers.</li>
+        <li><strong>🧪 Testing & Quality Assurance (3—7 Days)</strong> — Checking for bugs, optimizing performance, and refining the design.</li>
+        <li><strong>🚀 Launch (1 Day)</strong> — Migrating the site to the live environment and ensuring a smooth release.</li>
+        <li><strong>🔧 Post-Launch Support (Ongoing)</strong> — Security updates, content updates, and new feature rollouts.</li>
       </ul>
     
       <h2>4. Strategies to Speed Up the Process</h2>
@@ -672,17 +719,27 @@ const BlogPost = () => {
       <h2>5. Common Causes of Delays</h2>
       <p>Even well-planned projects can face setbacks. The most common are:</p>
       <ul>
-        <li>⚠ Frequent changes to scope or requirements.</li>
-        <li>⚠ Delays in providing content or approvals.</li>
-        <li>⚠ Technical issues or unexpected integration challenges.</li>
-        <li>⚠ Underestimating testing and revision time.</li>
+        <li>⚠️ Frequent changes to scope or requirements.</li>
+        <li>⚠️ Delays in providing content or approvals.</li>
+        <li>⚠️ Technical issues or unexpected integration challenges.</li>
+        <li>⚠️ Underestimating testing and revision time.</li>
       </ul>
     
       <h2>Conclusion</h2>
-      <p>Website development timelines vary greatly, but with proper planning, clear communication, and realistic expectations, you can ensure your site launches on time and delivers the impact you envision. Remember: a website is an investment in your brand’s future—building it right is more important than building it fast.</p>
+      <p>Website development timelines vary greatly, but with proper planning, clear communication, and realistic expectations, you can ensure your site launches on time and delivers the impact you envision. Remember: a website is an investment in your brand's future—building it right is more important than building it fast.</p>
     `, 
   }   
   ] 
+
+  // Handle author image click
+  const handleAuthorImageClick = (authorImage, authorName) => {
+    setSelectedImage({
+      src: authorImage,
+      alt: `${authorName} - Author`,
+      name: authorName
+    })
+    setIsImageModalOpen(true)
+  }
 
   // Find the blog post by ID
   const post = blogPosts.find(p => p.id === parseInt(id || '0'))
@@ -706,6 +763,15 @@ const BlogPost = () => {
 
   return (
     <>
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isImageModalOpen}
+        onClose={() => setIsImageModalOpen(false)}
+        imageSrc={selectedImage?.src}
+        imageAlt={selectedImage?.alt}
+        authorName={selectedImage?.name}
+      />
+
       {/* Structured Data for AI */}
       {post.structuredData && (
         <script
@@ -750,7 +816,9 @@ const BlogPost = () => {
               <img 
                 src={post.authorImage}
                 alt="Author"
-                className="w-8 h-8 rounded-full object-cover"
+                className="w-8 h-8 rounded-full object-cover cursor-pointer hover:ring-2 hover:ring-blue-500 hover:ring-offset-2 transition-all duration-200"
+                onClick={() => handleAuthorImageClick(post.authorImage, post.author)}
+                title="Click to view author photo"
               />
               <span itemProp="author">By {post.author}</span>
             </div>
@@ -775,13 +843,6 @@ const BlogPost = () => {
           </div>
           {/* Article Summary */}
           <ArticleSummary post={post} />
-          
-
-          
-          {/* Table of Contents for structured content */}
-          {post.content && typeof post.content !== 'string' && post.content.sections && (
-            <TableOfContents sections={post.content.sections} />
-          )}
           
           {/* Article Content - now below image */}
           {post.content && typeof post.content === 'string' ? (
@@ -816,7 +877,7 @@ const BlogPost = () => {
                   </a>
                   <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700" aria-label="Whatsapp">
                   <i className="fab fa-whatsapp"></i>
-                  </a>
+                  </a>
                 </div>
               </div>
               <Link 
@@ -841,4 +902,4 @@ const BlogPost = () => {
   )
 }
 
-export default BlogPost 
+export default BlogPost
