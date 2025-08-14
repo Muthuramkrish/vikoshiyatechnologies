@@ -156,6 +156,33 @@ const Blog = () => {
         "datePublished": "2025-08-08",
         "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
+    },
+    
+    {
+      id: 7,
+      title: "Domain Names and Hosting: A Business Owner's Guide",
+      excerpt: "Understanding domain names and web hosting is crucial for any business going online. Learn the key differences, best practices for choosing domains, hosting types, and how to set up your digital foundation for success.",
+      date: "August 14, 2025",
+      category: "Web Development",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      author: "Vijayalakshmi K",
+      readTime: "6 min read",
+      tags: ["domain names", "web hosting", "website setup", "business website", "digital foundation"],
+      structuredData: {
+        "@type": "Article",
+        "headline": "Domain Names and Hosting: A Business Owner's Guide",
+        "description": "Understanding domain names and web hosting is crucial for any business going online. Learn the key differences, best practices, and how to set up your digital foundation.",
+        "author": {
+          "@type": "Organization",
+          "name": "Vikoshiya Technologies"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Vikoshiya Technologies"
+        },
+        "datePublished": "2025-08-14",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
     }
   ]
 

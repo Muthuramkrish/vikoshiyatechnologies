@@ -728,7 +728,143 @@ const BlogPost = () => {
       <h2>Conclusion</h2>
       <p>Website development timelines vary greatly, but with proper planning, clear communication, and realistic expectations, you can ensure your site launches on time and delivers the impact you envision. Remember: a website is an investment in your brand's future—building it right is more important than building it fast.</p>
     `, 
-  }   
+  },
+  {
+    id: 7,
+    title: "Domain Names and Hosting: A Business Owner's Guide",
+    excerpt: "Understanding domain names and web hosting is crucial for any business going online. Learn the key differences, best practices for choosing domains, hosting types, and how to set up your digital foundation for success.",
+    date: "August 14, 2025",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: "Vijayalakshmi K",
+    authorImage: "/src/assets/v1.png",
+    readTime: "6 min read",
+    tags: ["domain names", "web hosting", "website setup", "business website", "digital foundation"],
+    structuredData: {
+      "@type": "Article",
+      "headline": "Domain Names and Hosting: A Business Owner's Guide",
+      "description": "Understanding domain names and web hosting is crucial for any business going online. Learn the key differences, best practices, and how to set up your digital foundation.",
+      "author": {
+        "@type": "Organization",
+        "name": "Vikoshiya Technologies"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vikoshiya Technologies"
+      },
+      "datePublished": "2025-08-14",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    content: `
+      <h2>Domain Names and Hosting: A Business Owner's Guide</h2>
+      <p>In today's digital-first world, your website is often the first touchpoint for customers. Before launching, you need to understand two key components: <strong>domain names</strong> and <strong>web hosting</strong>.</p>
+      
+      <h3>What is a Domain Name?</h3>
+      <p>A domain name is your website's address—what people type into a browser to find you (e.g., <em>www.yourbusiness.com</em>). Think of it as your business's street address, while hosting is the building where your website "lives."</p>
+      <ul>
+        <li><strong>Domain Name:</strong> Street address</li>
+        <li><strong>Hosting:</strong> The building housing your business</li>
+      </ul>
+      <p>The NCAA is a great example of strategic domain and hosting management. They own NCAA.com along with related domains like MarchMadness.com and FinalFour.org to ensure fans find official, secure content.</p>
+      
+      <h3>Choosing the Right Domain Name</h3>
+      <ul>
+        <li>Keep it short, simple, and easy to type</li>
+        <li>Make it brandable and unique</li>
+        <li>Use relevant keywords for SEO</li>
+        <li>Avoid numbers and hyphens</li>
+        <li>Secure multiple extensions (.com, .org, .net)</li>
+      </ul>
+      <p><em>Pro Tip:</em> Search for your desired domain using trusted registrars like Namecheap, GoDaddy, or Google Domains—and buy it before making your brand public.</p>
+      
+      <h3>What is Web Hosting?</h3>
+      <p>Web hosting stores your site's files and makes them accessible online. The right hosting ensures speed, reliability, and scalability.</p>
+      <ul>
+        <li><strong>Shared Hosting:</strong> Budget-friendly, good for small sites</li>
+        <li><strong>VPS Hosting:</strong> More power and control for growing businesses</li>
+        <li><strong>Dedicated Hosting:</strong> Full control, high performance</li>
+        <li><strong>Cloud Hosting:</strong> Flexible and scalable for fast growth</li>
+      </ul>
+      <p>The NCAA uses cloud hosting with load balancing during peak events to handle massive traffic without downtime.</p>
+      
+      <h3>NCAA Case Study: Smart Domain & Hosting Strategy</h3>
+      <ol>
+        <li>Centralized domain control for consistent branding</li>
+        <li>Hosting optimized for high-traffic events</li>
+        <li>Strong security (SSL, DDoS protection, monitoring)</li>
+        <li>Event-specific domains for easy navigation</li>
+      </ol>
+      
+      <h3>Domain vs Hosting: Key Differences</h3>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Domain Name</th>
+          <th>Web Hosting</th>
+        </tr>
+        <tr>
+          <td>What it is</td>
+          <td>Website address (URL)</td>
+          <td>Server space for storing files</td>
+        </tr>
+        <tr>
+          <td>Example</td>
+          <td>www.mybusiness.com</td>
+          <td>Bluehost, Hostinger, GoDaddy</td>
+        </tr>
+      </table>
+      
+      <h3>Getting Started</h3>
+      <ol>
+        <li>Choose and register your domain name</li>
+        <li>Select a hosting provider (some offer both in one package)</li>
+        <li>Connect your domain to your hosting</li>
+        <li>Build your site using tools like WordPress, Shopify, or Wix</li>
+      </ol>
+      
+      <h3>Top Hosting Recommendations</h3>
+      <ul>
+        <li><strong>Best for beginners:</strong> Bluehost</li>
+        <li><strong>Best for e-commerce:</strong> Shopify or SiteGround</li>
+        <li><strong>Budget-friendly:</strong> Hostinger or Namecheap</li>
+      </ul>
+      
+      <p><strong>Final Thoughts:</strong> Your domain name and hosting form the foundation of your online presence. Choose wisely, and you'll set your business up for lasting digital success.</p>
+      
+      <h2>Why Domain and Hosting Matter for Your Business</h2>
+      <p>At Vikoshiya Technologies, we've helped countless businesses establish their online presence. Here's why getting your domain and hosting strategy right from the start is crucial:</p>
+      
+      <h3>Brand Protection and Trust</h3>
+      <p>Your domain name is more than just a web address—it's part of your brand identity. A professional domain (like yourbusiness.com) builds trust with customers, while a free subdomain (yourbusiness.freesite.com) can make your business appear less credible.</p>
+      
+      <h3>SEO Benefits</h3>
+      <p>Search engines favor websites with relevant domain names and fast hosting. A well-chosen domain with keywords related to your business can improve your search rankings, while reliable hosting ensures your site loads quickly—a key ranking factor.</p>
+      
+      <h3>Scalability and Growth</h3>
+      <p>As your business grows, your hosting needs will evolve. Starting with the right hosting provider who offers scalable solutions means you won't need to migrate your site later—a process that can be complex and risky.</p>
+      
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Choosing a domain that's too similar to competitors</strong> - This can confuse customers and dilute your brand</li>
+        <li><strong>Going with the cheapest hosting option</strong> - Poor hosting can lead to slow load times, frequent downtime, and security issues</li>
+        <li><strong>Not considering future needs</strong> - Plan for growth when selecting your hosting plan</li>
+        <li><strong>Forgetting to renew your domain</strong> - Set up auto-renewal to prevent losing your domain</li>
+        <li><strong>Not securing related domains</strong> - Register common variations and extensions to protect your brand</li>
+      </ul>
+      
+      <h2>How Vikoshiya Technologies Can Help</h2>
+      <p>We offer comprehensive domain and hosting solutions tailored to your business needs:</p>
+      <ul>
+        <li>Domain research and registration assistance</li>
+        <li>Hosting recommendations based on your specific requirements</li>
+        <li>Complete website setup and configuration</li>
+        <li>Ongoing maintenance and support</li>
+        <li>Migration services if you need to change providers</li>
+      </ul>
+      
+      <p>Ready to establish your digital foundation? Contact us today to discuss your domain and hosting needs. We'll help you make the right choices for your business's online success.</p>
+    `
+  }  
   ] 
 
   // Handle author image click
