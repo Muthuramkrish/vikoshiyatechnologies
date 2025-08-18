@@ -22,6 +22,7 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
+                <li><Link to="/" className="hover:underline text-gray-400">Home</Link></li>
                 <li>
                   <a
                     href="/#services"
@@ -42,7 +43,6 @@ const Footer = () => {
                 <li><Link to="/about" className="hover:underline text-gray-400">About</Link></li>
                 <li><Link to="/blog" className="hover:underline text-gray-400">Blog</Link></li>
                 <li><Link to="/contact" className="hover:underline text-gray-400">Contact</Link></li>
-                
               </ul>
             </div>
             {/* Contact Info */}
@@ -69,7 +69,7 @@ const Footer = () => {
                 </a>
                 <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Whatsapp">
                   <i className="fab fa-whatsapp"></i>
-                </a>
+                </a>
               </div>
             </div>
           </div>
@@ -98,4 +98,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default Footer
