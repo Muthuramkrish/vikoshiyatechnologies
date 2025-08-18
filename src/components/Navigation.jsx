@@ -36,14 +36,12 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-start justify-start">
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={e => {
-                e.preventDefault();
-                if (window.location.pathname === '/') {
+                if (location.pathname === '/') {
+                  e.preventDefault();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                  window.location.href = '/';
                 }
               }}
             >
@@ -52,11 +50,25 @@ const Navigation = () => {
                 alt="Vikoshiya Technologies logo"
                 className="h-12 w-auto hover:opacity-80 mt-2 transition-opacity duration-300" 
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden sm:flex sm:items-center sm:space-x-9 mr-8 mt-4">
+            <Link 
+              to="/"
+              className={`border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-base font-medium ${
+                isActive('/') ? 'border-gray-300 text-gray-700' : ''
+              }`}
+              onClick={e => {
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
+              Home
+            </Link>
             <button 
               onClick={handleServicesClick}
               className={`border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-base font-medium ${
@@ -120,6 +132,19 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
+              <Link
+                to="/"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-lg font-medium"
+                onClick={e => {
+                  setIsMenuOpen(false);
+                  if (location.pathname === '/') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                Home
+              </Link>
               <button
                 onClick={(e) => {
                   handleServicesClick(e)
