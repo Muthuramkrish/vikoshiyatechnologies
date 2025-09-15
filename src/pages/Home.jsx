@@ -60,6 +60,27 @@ const Home = () => {
     }
   }, [])
 
+  // Scroll functions for services
+  const scrollServicesLeft = () => {
+    const container = document.getElementById('services-container')
+    if (container) {
+      container.scrollBy({
+        left: -320, // Scroll by approximately one card width
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const scrollServicesRight = () => {
+    const container = document.getElementById('services-container')
+    if (container) {
+      container.scrollBy({
+        left: 320, // Scroll by approximately one card width
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <>
       {/* Hero Section */}
@@ -111,73 +132,139 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Web Development Card */}
-            <Link 
-              to="/web-development" 
-              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+          {/* Services Container with Navigation */}
+          <div className="relative">
+            {/* Left Navigation Button */}
+            <button
+              onClick={scrollServicesLeft}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300"
+              style={{ marginLeft: '-20px' }}
             >
-              <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-laptop-code text-blue-600 text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Web Development</h3>
-              <p className="text-gray-600 mb-4">
-                Custom websites and web applications built with modern technologies for optimal performance and user experience.
-              </p>
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd1217ef-0fd1-4724-b058-ab7fbd3c7796.png"
-                alt="Developers coding a website with modern UI elements on screen"
-                className="w-full rounded-md mb-4"
-              />
-              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </span>
-            </Link>
+              <i className="fas fa-chevron-left text-lg"></i>
+            </button>
 
-            {/* Quality Assurance Card */}
-            <Link 
-              to="/quality-assurance" 
-              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            {/* Right Navigation Button */}
+            <button
+              onClick={scrollServicesRight}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300"
+              style={{ marginRight: '-20px' }}
             >
-              <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-check-double text-blue-600 text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Quality Assurance</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive testing services to ensure your applications meet the highest quality standards before launch.
-              </p>
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9b2b15d-dbe0-4356-8ff3-ccb6471aae1d.png"
-                alt="Quality assurance specialist testing application on multiple devices"
-                className="w-full rounded-md mb-4"
-              />
-              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </span>
-            </Link>
+              <i className="fas fa-chevron-right text-lg"></i>
+            </button>
 
-            {/* Ecommerce Website Development Card */}
-            <Link 
-              to="/ecommerce" 
-              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            {/* Scrollable Services Container */}
+            <div
+              id="services-container"
+              className="flex gap-8 overflow-x-auto scrollbar-hide pb-4"
+              style={{
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                WebkitScrollbar: { display: 'none' }
+              }}
             >
-              <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-shopping-cart text-blue-600 text-xl"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Ecommerce Website Development</h3>
-              <p className="text-gray-600 mb-4">
-                Powerful, scalable, and secure ecommerce solutions tailored for your online business.
-              </p>
-              <img 
-                src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Modern ecommerce workspace with laptop and shopping cart"
-                className="w-full rounded-md mb-4"
-              />
-              <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                Learn more <i className="fas fa-arrow-right ml-1"></i>
-              </span>
-            </Link>
+              {/* Web Development Card */}
+              <Link 
+                to="/web-development" 
+                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
+                style={{ minWidth: '300px', width: '300px' }}
+              >
+                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <i className="fas fa-laptop-code text-blue-600 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Web Development</h3>
+                <p className="text-gray-600 mb-4">
+                  Custom websites and web applications built with modern technologies for optimal performance and user experience.
+                </p>
+                <img 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd1217ef-0fd1-4724-b058-ab7fbd3c7796.png"
+                  alt="Developers coding a website with modern UI elements on screen"
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
+                  Learn more <i className="fas fa-arrow-right ml-1"></i>
+                </span>
+              </Link>
+
+              {/* Quality Assurance Card */}
+              <Link 
+                to="/quality-assurance" 
+                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
+                style={{ minWidth: '300px', width: '300px' }}
+              >
+                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <i className="fas fa-check-double text-blue-600 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Quality Assurance</h3>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive testing services to ensure your applications meet the highest quality standards before launch.
+                </p>
+                <img 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9b2b15d-dbe0-4356-8ff3-ccb6471aae1d.png"
+                  alt="Quality assurance specialist testing application on multiple devices"
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
+                  Learn more <i className="fas fa-arrow-right ml-1"></i>
+                </span>
+              </Link>
+
+              {/* Ecommerce Website Development Card */}
+              <Link 
+                to="/ecommerce" 
+                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
+                style={{ minWidth: '300px', width: '300px' }}
+              >
+                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <i className="fas fa-shopping-cart text-blue-600 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Ecommerce Website Development</h3>
+                <p className="text-gray-600 mb-4">
+                  Powerful, scalable, and secure ecommerce solutions tailored for your online business.
+                </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Modern ecommerce workspace with laptop and shopping cart"
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
+                  Learn more <i className="fas fa-arrow-right ml-1"></i>
+                </span>
+              </Link>
+
+              {/* HRMS Card */}
+              <Link 
+                to="/hrms" 
+                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
+                style={{ minWidth: '300px', width: '300px' }}
+              >
+                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <i className="fas fa-users-cog text-blue-600 text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Human Resource Management System</h3>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive HRMS solutions to streamline your HR operations and enhance employee experience.
+                </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="HR professionals using HRMS dashboard on multiple devices"
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
+                  Learn more <i className="fas fa-arrow-right ml-1"></i>
+                </span>
+              </Link>
+
+              {/* Add more service cards here as needed */}
+            </div>
           </div>
+
+          {/* Optional: Scroll indicators */}
+          {/* <div className="flex justify-center mt-6">
+            <div className="flex space-x-2">
+              <div className="w-3 h-3 bg-blue-600 rounded-full transition-all duration-300"></div>
+              <div className="w-3 h-3 bg-gray-300 rounded-full transition-all duration-300"></div>
+            </div>
+          </div> */}
         </div>
       </section>
 
@@ -223,4 +310,4 @@ const Home = () => {
   )
 }
 
-export default Home 
+export default Home

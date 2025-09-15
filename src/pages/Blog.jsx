@@ -206,7 +206,7 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
                 <Link to={`/blog/${post.id}`} className="block">
                   <img 
                     src={post.image} 
@@ -214,7 +214,7 @@ const Blog = () => {
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </Link>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
                       {post.category}
@@ -224,11 +224,11 @@ const Blog = () => {
                     <span className="text-gray-500 text-sm">{post.readTime}</span>
                   </div>
                   <Link to={`/blog/${post.id}`} className="block">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2 min-h-[3.5rem]">
                       {post.title}
                     </h3>
                   </Link>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -238,7 +238,7 @@ const Blog = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-2">
                       <span className="text-gray-500 text-sm">By {post.author}</span>
                     </div>
@@ -265,4 +265,4 @@ const Blog = () => {
   )
 }
 
-export default Blog 
+export default Blog

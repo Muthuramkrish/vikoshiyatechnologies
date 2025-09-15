@@ -4,6 +4,10 @@ import Footer from '../components/Footer.jsx'
 import CTASection from '../components/CTASection.jsx'
 import ArticleSummary from '../components/ArticleSummary.jsx'
 import RelatedArticles from '../components/RelatedArticles.jsx'
+import Muthuramakrishnan from '../assets/profile.png'
+import Rajesh from '../assets/RK.png'
+import Vikoshiya from '../assets/v1.png'
+import Logesh from '../assets/logesh.png'
 
 // Image Popup Modal Component
 const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt, authorName }) => {
@@ -64,7 +68,7 @@ const BlogPost = () => {
       category: "Company Story",
       image: "https://i.pinimg.com/736x/c9/88/0a/c9880a8abf25f389be7154e8fee18270.jpg",
       author: "Vikoshiya Team",
-      authorImage: "/src/assets/v1.png",
+      authorImage: Vikoshiya,
       readTime: "8 min read",
       tags: ["company story", "mission", "vision", "technology", "digital transformation"],
       structuredData: {
@@ -217,7 +221,7 @@ const BlogPost = () => {
       category: "Web Development",
       image: "https://i.pinimg.com/1200x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg",
       author: "Rajesh Kumar",
-      authorImage: "/src/assets/RK.png"
+      authorImage: Rajesh,
     },
     {
       id: 3,
@@ -352,7 +356,7 @@ const BlogPost = () => {
       category: "Quality Assurance",
       image: "https://i.pinimg.com/736x/cf/f5/e1/cff5e1cba8964bcaeaee87cf0eaecb59.jpg",
       author: "Muthuramakrishnan",
-      authorImage: "/src/assets/profile.png"
+      authorImage: Muthuramakrishnan,
     },
     {
       id: 4,
@@ -414,7 +418,7 @@ const BlogPost = () => {
       category: "Quality Assurance",
       image: "https://i.pinimg.com/1200x/2a/33/c7/2a33c7347de60d0c65be83a72c4495be.jpg",
       author: "Rajesh Kumar",
-      authorImage: "/src/assets/RK.png"
+      authorImage: Rajesh,
     },
     {
       id: 5,
@@ -617,7 +621,7 @@ const BlogPost = () => {
       category: "Ecommerce",
       image: "https://plus.unsplash.com/premium_photo-1683758344058-60a1506db480?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       author: "Muthuramakrishnan M",
-      authorImage: "/src/assets/profile.png"
+      authorImage: Muthuramakrishnan,
     },
     {
       id: 6,
@@ -627,7 +631,7 @@ const BlogPost = () => {
       category: "Web Development",
       image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       author: "Logeshwari",
-      authorImage: "/src/assets/logesh.png",
+      authorImage: Logesh,
       readTime: "8 min read",
       tags: ["web development", "timeline", "project management", "planning", "development process"],
       structuredData: {
@@ -737,7 +741,7 @@ const BlogPost = () => {
     category: "Web Development",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: "Vijayalakshmi K",
-    authorImage: "/src/assets/v1.png",
+    authorImage: Vikoshiya,
     readTime: "6 min read",
     tags: ["domain names", "web hosting", "website setup", "business website", "digital foundation"],
     structuredData: {

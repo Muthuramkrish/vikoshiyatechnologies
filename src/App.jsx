@@ -11,7 +11,9 @@ import WebDevelopment from './pages/WebDevelopment.jsx'
 import QualityAssurance from './pages/QualityAssurance.jsx'
 import BlogPost from './pages/BlogPost.jsx'
 import Ecommerce from './pages/Ecommerce.jsx'
+import Hrms from './pages/Hrms.jsx'
 import UnderMaintenance from './pages/UnderMaintenance.jsx'
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         <Route path="/quality-assurance" element={<QualityAssurance />} />
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/ecommerce" element={<Ecommerce />} />
+        <Route path="/hrms" element={<Hrms />} />
         <Route path="/under-maintenance" element={<UnderMaintenance />} />
       </Routes>
     </div>
@@ -36,4 +39,4 @@ function App() {
   )
 }
 
-export default App 
+export default App
