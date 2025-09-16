@@ -69,7 +69,10 @@ const Footer = () => {
                 </a>
                 <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Whatsapp">
                   <i className="fab fa-whatsapp"></i>
-                </a>
+                </a>
+                <a href="https://instagram.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Instagram">
+                  <i className="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>

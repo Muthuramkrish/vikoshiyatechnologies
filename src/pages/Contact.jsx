@@ -118,9 +118,12 @@ const Contact = () => {
                 <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700" aria-label="Whatsapp">
+                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700 text-2xl" aria-label="Whatsapp">
                   <i className="fab fa-whatsapp"></i>
-                </a>
+                </a>
+                <a href="https://instagram.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="Instagram">
+                  <i className="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
 
