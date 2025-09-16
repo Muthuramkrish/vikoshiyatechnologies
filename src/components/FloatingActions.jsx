@@ -8,12 +8,32 @@ const FloatingActions = () => {
 
   // Contact details from the Contact page
   const phoneNumber = "+1234567890" // Phone number from contact page
-  const whatsappNumber = "+1234567890" // Using same number for WhatsApp
+  // Using WhatsApp Business/Channel approach or a working number
+  const whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t"
   const whatsappMessage = "Hi! I'm interested in Vikoshiya Technologies services. Can you help me?"
 
   const handleWhatsAppClick = () => {
-    const url = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`
-    window.open(url, '_blank')
+    // Multiple options for WhatsApp contact
+    
+    // Option 1: Direct WhatsApp Business number (replace with your actual number)
+    // Format: country code + number (without + or spaces)
+    // Example: "919876543210" for Indian number +91 98765 43210
+    const businessWhatsAppNumber = "" // Add your WhatsApp Business number here
+    
+    // Option 2: Use WhatsApp Channel (current working option)
+    const channelUrl = "https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t"
+    
+    // Option 3: Generic WhatsApp web link (for testing)
+    const genericWhatsAppUrl = "https://web.whatsapp.com/"
+    
+    if (businessWhatsAppNumber && businessWhatsAppNumber.length >= 10) {
+      // Use direct WhatsApp chat with your business number
+      const url = `https://wa.me/${businessWhatsAppNumber}?text=${encodeURIComponent(whatsappMessage)}`
+      window.open(url, '_blank')
+    } else {
+      // Use WhatsApp Channel as it's a working link
+      window.open(channelUrl, '_blank')
+    }
   }
 
   const handleCallClick = () => {
