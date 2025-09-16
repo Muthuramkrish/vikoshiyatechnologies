@@ -9,7 +9,7 @@ const FloatingActions = () => {
   // Contact details from the Contact page
   const phoneNumber = "9585754821" // Phone number from contact page
   const whatsappNumber = "9585754821" // Using same number for WhatsApp
-  const whatsappMessage = "Hi! I'm interested in Vikoshiya Technologies services. Can you help me?"
+  const whatsappMessage = "Hi! I’m exploring the services of Vikoshiya Technologies. Could you provide me with more details?"
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(whatsappMessage)}`
