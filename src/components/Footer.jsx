@@ -58,19 +58,19 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
               <div className="flex space-x-5 mt-2">
-                <a href="https://facebook.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Facebook">
+                <a href="https://facebook.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="Facebook">
                   <i className="fab fa-facebook"></i>
                 </a>
-                <a href="https://twitter.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Twitter">
+                <a href="https://twitter.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="Twitter">
                   <i className="fa-brands fa-x-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Whatsapp">
+                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700 text-2xl transition-colors" aria-label="Whatsapp">
                   <i className="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://instagram.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Instagram">
+                <a href="https://instagram.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="Instagram">
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>
