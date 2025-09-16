@@ -14,4 +14,56 @@
     width: 100%;
     height: 100vh;
   }
+
+  /* Floating Action Buttons */
+  .floating-action-btn {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+  }
+
+  .floating-action-btn:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .floating-action-btn {
+      padding: 12px;
+    }
+    
+    .floating-action-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Pulse animation for main button */
+  .floating-main-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    opacity: 0.3;
+    animation: pulse-ring 2s infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
 } 

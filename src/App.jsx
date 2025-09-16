@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import FloatingActions from './components/FloatingActions.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Blog from './pages/Blog.jsx'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/hrms" element={<Hrms />} />
         <Route path="/under-maintenance" element={<UnderMaintenance />} />
       </Routes>
+      <FloatingActions />
     </div>
     // <UnderMaintenance />
   )
