@@ -210,7 +210,7 @@ const Terms = () => {
                       <p className="text-gray-600">
                         <strong>Legal Department:</strong><br />
                         Email: legal@vikoshiyatechnologies.com<br />
-                        Phone: +1 (234) 567-890
+                        Phone: +91 95857 54821
                       </p>
                     </div>
                     <div>

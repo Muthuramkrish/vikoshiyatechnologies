@@ -6,7 +6,7 @@ import ArticleSummary from '../components/ArticleSummary.jsx'
 import RelatedArticles from '../components/RelatedArticles.jsx'
 import Muthuramakrishnan from '../assets/profile.png'
 import Rajesh from '../assets/RK.png'
-import Vikoshiya from '../assets/v1.png'
+import Vikoshiya from '../assets/logo2.png'
 import Logesh from '../assets/logesh.png'
 
 // Image Popup Modal Component

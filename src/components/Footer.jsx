@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import v1Logo from '../assets/v1.png'
+import v1Logo from '../assets/logo2.png'
 import SitemapModal from './SitemapModal.jsx'
 
 const Footer = () => {
@@ -50,7 +50,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><i className="fas fa-map-marker-alt mr-2"></i> 4/786, Veeraperumal kovil street, Soolakkarai, Virudhunagar - 626 003</li>
-                <li><i className="fas fa-phone mr-2"></i> +1 (234) 567-890</li>
+                <li><i className="fas fa-phone mr-2"></i> +91 95857 54821</li>
                 <li><i className="fas fa-envelope mr-2"></i> info@vikoshiyatechnologies.com</li>
               </ul>
             </div>
@@ -59,17 +59,20 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
               <div className="flex space-x-5 mt-2">
                 <a href="https://facebook.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Facebook">
-                  <i className="fab fa-facebook"></i>
+                  <i className="fab fa-square-facebook"></i>
                 </a>
                 <a href="https://twitter.com/yourcompany" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Twitter">
-                  <i className="fa-brands fa-x-twitter"></i>
+                  <i className="fa-brands fa-square-x-twitter"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
                 <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Whatsapp">
-                  <i className="fab fa-whatsapp"></i>
+                  <i className="fab fa-square-whatsapp"></i>
                 </a>
+                <a href="https://instagram.com" target="_blank" className="text-gray-400 hover:text-white text-2xl" aria-label="Instagram">
+                  <i className="fab fa-square-instagram"></i>
+                </a>
               </div>
             </div>
           </div>

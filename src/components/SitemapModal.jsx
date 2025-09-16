@@ -47,7 +47,7 @@ const SitemapModal = ({ isOpen, onClose }) => {
             <p className="text-gray-600">
             4/786, Veeraperumal kovil street, <br />
             Soolakkarai, Virudhunagar - 626 003<br />
-              <strong>Phone:</strong> +1 (234) 567-890<br />
+              <strong>Phone:</strong> +91 95857 54821<br />
               <strong>Email:</strong> info@vikoshiyatechnologies.com
             </p>
           </div>

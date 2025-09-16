@@ -124,5 +124,5 @@ This project is licensed under the MIT License.
 
 For questions or support, contact Vikoshiya Technologies:
 - Email: info@vikoshiya.com
-- Phone: +1 (234) 567-890
+- Phone: +91 95857 54821
 - Website: https://vikoshiya.com 

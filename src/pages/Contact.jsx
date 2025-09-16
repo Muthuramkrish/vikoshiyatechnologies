@@ -4,7 +4,7 @@ import Footer from '../components/Footer.jsx'
 // API base URL based on environment
 const API_BASE_URL = import.meta.env.VITE_API_URL || (
   import.meta.env.PROD 
-    ? 'https://vikoshiya-technologies.vercel.app/api'
+    ? 'https://vikoshiyatechnologies.com/api'
     : 'http://localhost:5000/api'
 );
 
@@ -79,9 +79,7 @@ const Contact = () => {
             <div className="flex-1 flex flex-col justify-center text-lg md:text-xl gap-5">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Office</h3>
               <div className="flex items-center gap-3 text-sm md:text-base">
-                <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6 text-blue-600">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
-                </svg>
+                <i className="fas fa-map-marker-alt text-blue-600"></i>
                 4/786, Veeraperumal kovil street, Soolakkarai, Virudhunagar - 626 003
               </div>
               <iframe 
@@ -92,35 +90,33 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="flex items-center gap-3">
-                <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6 text-blue-600">
-                  <path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.91 19.91 0 0 1 3 5.09 1 1 0 0 1 4 4h4.09a1 1 0 0 1 1 .75l1.13 4.52a1 1 0 0 1-.29 1L8.21 12.21a16 16 0 0 0 7.58 7.58l1.94-1.94a1 1 0 0 1 1-.29l4.52 1.13a1 1 0 0 1 .75 1V21z"/>
-                </svg>
+                <i className="fas fa-phone text-blue-600"></i>
                 <a href="tel:+1234567890" className="text-gray-700 hover:text-blue-600 transition-colors">
-                  +1 (234) 567-890
+                  +91 95857 54821
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6 text-blue-600">
-                  <path d="M4 4h16v16H4z"/>
-                  <path d="M22 6l-10 7L2 6"/>
-                </svg>
+                <i className="fas fa-envelope text-blue-600"></i>
                 <a href="mailto:info@vikoshiyatechnologies.com" className="text-gray-700 hover:text-blue-600 transition-colors">
                   info@vikoshiyatechnologies.com
                 </a>
               </div>
               <div className="flex gap-5 mt-4">
                 <a href="https://facebook.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors">
-                  <i className="fab fa-facebook"></i>
+                  <i className="fab fa-square-facebook"></i>
                 </a>
                 <a href="https://twitter.com/yourcompany" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors">
-                  <i className="fa-brands fa-x-twitter"></i>
+                  <i className="fa-brands fa-square-x-twitter"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/vikoshiya-technologies-pvt-ltd/" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700" aria-label="Whatsapp">
-                  <i className="fab fa-whatsapp"></i>
-                </a>
+                <a href="https://whatsapp.com/channel/0029Vb6Oqf3ISTkIJqCVf03t" target="_blank" className="text-blue-600 hover:text-blue-700 text-2xl" aria-label="Whatsapp">
+                  <i className="fab fa-square-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" className="text-blue-600 hover:text-blue-800 text-2xl transition-colors" aria-label="Instagram">
+                  <i className="fab fa-square-instagram"></i>
+                </a>
               </div>
             </div>
 
