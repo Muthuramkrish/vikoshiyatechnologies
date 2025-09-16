@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const FloatingActions = () => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isSitemapOpen, setIsSitemapOpen] = useState(false)
 
   // Contact details from the Contact page
   const phoneNumber = "+1234567890" // Phone number from contact page
@@ -21,10 +24,54 @@ const FloatingActions = () => {
     setIsExpanded(!isExpanded)
   }
 
+  // Handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Hide when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+        setIsExpanded(false) // Close expanded menu when hiding
+      } else {
+        setIsVisible(true)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
+  // Check for sitemap modal
+  useEffect(() => {
+    const checkSitemapModal = () => {
+      const sitemapModal = document.querySelector('[class*="fixed inset-0 bg-black bg-opacity-70"]')
+      setIsSitemapOpen(!!sitemapModal)
+    }
+
+    // Check immediately
+    checkSitemapModal()
+
+    // Set up observer for DOM changes
+    const observer = new MutationObserver(checkSitemapModal)
+    observer.observe(document.body, { childList: true, subtree: true })
+
+    return () => observer.disconnect()
+  }, [])
+
+  // Hide buttons when sitemap is open
+  if (isSitemapOpen) {
+    return null
+  }
+
   return (
     <>
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 transform ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+      }`}>
         {/* Main Action Button */}
         <div className="relative">
           {/* WhatsApp Button - appears when expanded */}
@@ -33,7 +80,7 @@ const FloatingActions = () => {
           }`}>
             <button
               onClick={handleWhatsAppClick}
-              className="floating-action-btn bg-green-500 hover:bg-green-600 text-white p-4 rounded-full transition-all duration-300 group relative"
+              className="floating-action-btn whatsapp-btn text-white p-4 rounded-full transition-all duration-300 group relative"
               title="Chat on WhatsApp"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -41,8 +88,13 @@ const FloatingActions = () => {
               </svg>
             </button>
             {/* WhatsApp Label */}
-            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              Chat on WhatsApp
+            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                Chat on WhatsApp
+              </div>
+              {/* Arrow pointing to button */}
+              <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-green-500 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
             </div>
           </div>
 
@@ -52,7 +104,7 @@ const FloatingActions = () => {
           }`}>
             <button
               onClick={handleCallClick}
-              className="floating-action-btn bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full transition-all duration-300 group relative"
+              className="floating-action-btn call-btn text-white p-4 rounded-full transition-all duration-300 group relative"
               title="Call us directly"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -60,15 +112,20 @@ const FloatingActions = () => {
               </svg>
             </button>
             {/* Call Label */}
-            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              Call us directly
+            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                Call us directly
+              </div>
+              {/* Arrow pointing to button */}
+              <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-blue-500 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
             </div>
           </div>
 
           {/* Main Toggle Button */}
           <button
             onClick={toggleExpanded}
-            className={`floating-main-btn floating-action-btn bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110 relative ${
+            className={`floating-main-btn floating-action-btn text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110 relative ${
               isExpanded ? 'rotate-45' : 'rotate-0'
             }`}
             title="Contact Options"
