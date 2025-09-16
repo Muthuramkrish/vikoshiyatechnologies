@@ -269,10 +269,10 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-gray-50">
+      <section id="about" className="py-8 md:py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex items-center">
-            <div className="lg:w-1/2 mb-8 lg:mb-0">
+            <div className="lg:w-1/2 mb-6 md:mb-8 lg:mb-0">
               <img 
                 src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72f906f1-d94a-4ffd-8387-cd1f1f95365c.png"
                 alt="Vikoshiya Technologies team collaborating in modern office space with computers and whiteboards"
@@ -280,17 +280,17 @@ const Home = () => {
               />
             </div>
             <div className="lg:w-1/2 lg:pl-12 text-justify">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Vikoshiya Technologies</h2>
-              <p className="text-lg text-gray-600 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">About Vikoshiya Technologies</h2>
+              <p className="text-base md:text-lg text-gray-600 mb-3 md:mb-4">
                 At Vikoshiya Technologies, we're more than just an IT company — we're part of a journey that started back in 2012.
               </p>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-base md:text-lg text-gray-600 mb-3 md:mb-4">
                 It all began in Singapore, where we laid our foundation in the electrical and instrumentation field. Over the years, we've expanded into media (2015) and infrastructure (2016), and now, in 2024, we've stepped into the world of technology with a new chapter based in Virudhunagar, India.
               </p>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-base md:text-lg text-gray-600 mb-3 md:mb-4">
                 We're proud of where we've come from, and even more excited about where we're going.
               </p>
-              <p className="text-lg font-semibold text-blue-600">Let's build something meaningful — together.</p>
+              <p className="text-base md:text-lg font-semibold text-blue-600">Let's build something meaningful — together.</p>
               <Link 
                 to="/about" 
                 className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-700 font-medium"
