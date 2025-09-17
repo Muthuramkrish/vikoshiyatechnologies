@@ -60,26 +60,6 @@ const Home = () => {
     }
   }, [])
 
-  // Scroll functions for services
-  const scrollServicesLeft = () => {
-    const container = document.getElementById('services-container')
-    if (container) {
-      container.scrollBy({
-        left: -320, // Scroll by approximately one card width
-        behavior: 'smooth'
-      })
-    }
-  }
-
-  const scrollServicesRight = () => {
-    const container = document.getElementById('services-container')
-    if (container) {
-      container.scrollBy({
-        left: 320, // Scroll by approximately one card width
-        behavior: 'smooth'
-      })
-    }
-  }
 
   return (
     <>
@@ -132,42 +112,13 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Services Container with Navigation */}
-          <div className="relative">
-            {/* Left Navigation Button */}
-            <button
-              onClick={scrollServicesLeft}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300"
-              style={{ marginLeft: '-20px' }}
+          {/* Services Grid Container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Web Development Card */}
+            <Link 
+              to="/web-development" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
             >
-              <i className="fas fa-chevron-left text-lg"></i>
-            </button>
-
-            {/* Right Navigation Button */}
-            <button
-              onClick={scrollServicesRight}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300"
-              style={{ marginRight: '-20px' }}
-            >
-              <i className="fas fa-chevron-right text-lg"></i>
-            </button>
-
-            {/* Scrollable Services Container */}
-            <div
-              id="services-container"
-              className="flex gap-8 overflow-x-auto scrollbar-hide pb-4"
-              style={{
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-                WebkitScrollbar: { display: 'none' }
-              }}
-            >
-              {/* Web Development Card */}
-              <Link 
-                to="/web-development" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
-                style={{ minWidth: '300px', width: '300px' }}
-              >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-laptop-code text-blue-600 text-xl"></i>
                 </div>
@@ -185,12 +136,11 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* Quality Assurance Card */}
-              <Link 
-                to="/quality-assurance" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
-                style={{ minWidth: '300px', width: '300px' }}
-              >
+            {/* Quality Assurance Card */}
+            <Link 
+              to="/quality-assurance" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-check-double text-blue-600 text-xl"></i>
                 </div>
@@ -208,12 +158,11 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* Ecommerce Website Development Card */}
-              <Link 
-                to="/ecommerce" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
-                style={{ minWidth: '300px', width: '300px' }}
-              >
+            {/* Ecommerce Website Development Card */}
+            <Link 
+              to="/ecommerce" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-shopping-cart text-blue-600 text-xl"></i>
                 </div>
@@ -231,40 +180,8 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* HRMS Card */}
-              {/* <Link 
-                to="/hrms" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
-                style={{ minWidth: '300px', width: '300px' }}
-              >
-                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <i className="fas fa-users-cog text-blue-600 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Human Resource Management System</h3>
-                <p className="text-gray-600 mb-4">
-                  Comprehensive HRMS solutions to streamline your HR operations and enhance employee experience.
-                </p>
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="HR professionals using HRMS dashboard on multiple devices"
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                  Learn more <i className="fas fa-arrow-right ml-1"></i>
-                </span>
-              </Link> */}
-
-              {/* Add more service cards here as needed */}
-            </div>
           </div>
 
-          {/* Optional: Scroll indicators */}
-          {/* <div className="flex justify-center mt-6">
-            <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-blue-600 rounded-full transition-all duration-300"></div>
-              <div className="w-3 h-3 bg-gray-300 rounded-full transition-all duration-300"></div>
-            </div>
-          </div> */}
         </div>
       </section>
 

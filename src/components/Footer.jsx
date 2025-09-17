@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import v1Logo from '../assets/logo2.png'
+import v1Logo from '../assets/logo.png'
 import SitemapModal from './SitemapModal.jsx'
 
 const Footer = () => {

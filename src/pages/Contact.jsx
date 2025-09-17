@@ -75,8 +75,8 @@ const Contact = () => {
       <div className="min-h-screen bg-gray-50  py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Contact Info */}
-            <div className="flex-1 flex flex-col justify-center text-lg md:text-xl gap-5">
+            {/* Contact Info - Second on mobile, First on desktop */}
+            <div className="flex-1 flex flex-col justify-center text-lg md:text-xl gap-5 order-2 md:order-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Office</h3>
               <div className="flex items-center gap-3 text-sm md:text-base">
                 <i className="fas fa-map-marker-alt text-blue-600"></i>
@@ -120,8 +120,8 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="flex-1 flex justify-center">
+            {/* Contact Form - First on mobile, Second on desktop */}
+            <div className="flex-1 flex justify-center order-1 md:order-2">
               <div className="max-w-2xl w-full bg-white rounded-3xl shadow-2xl p-10 md:p-20 text-lg md:text-xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h2>
                 {!showThankYou ? (
