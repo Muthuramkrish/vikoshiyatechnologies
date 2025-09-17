@@ -168,33 +168,4 @@
     left: 100%;
   }
 
-  /* Services responsive layout */
-  @media (min-width: 1024px) {
-    #services-container {
-      /* Show exactly 3 cards without scrolling */
-      max-width: calc(3 * 320px + 2 * 32px); /* 3 cards + 2 gaps */
-    }
-    
-    .service-card {
-      min-width: 320px;
-      max-width: 320px;
-    }
-  }
-
-  /* Hide scrollbar but keep functionality */
-  .scrollbar-hide {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Mobile touch scrolling */
-  @media (max-width: 1023px) {
-    #services-container {
-      -webkit-overflow-scrolling: touch;
-    }
-  }
 } 

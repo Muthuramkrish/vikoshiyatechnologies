@@ -60,28 +60,6 @@ const Home = () => {
     }
   }, [])
 
-  // Scroll functions for services
-  const scrollServicesLeft = () => {
-    const container = document.getElementById('services-container')
-    if (container) {
-      const cardWidth = 320 + 32 // Card width + gap
-      container.scrollBy({
-        left: -cardWidth,
-        behavior: 'smooth'
-      })
-    }
-  }
-
-  const scrollServicesRight = () => {
-    const container = document.getElementById('services-container')
-    if (container) {
-      const cardWidth = 320 + 32 // Card width + gap
-      container.scrollBy({
-        left: cardWidth,
-        behavior: 'smooth'
-      })
-    }
-  }
 
   return (
     <>
@@ -134,48 +112,13 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Services Container with Navigation */}
-          <div className="relative">
-            {/* Left Navigation Button - Hidden on mobile */}
-            <button
-              onClick={scrollServicesLeft}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hidden lg:block"
-              style={{ marginLeft: '-20px' }}
+          {/* Services Grid Container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Web Development Card */}
+            <Link 
+              to="/web-development" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
             >
-              <i className="fas fa-chevron-left text-lg"></i>
-            </button>
-
-            {/* Right Navigation Button - Hidden on mobile */}
-            <button
-              onClick={scrollServicesRight}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-gray-600 hover:text-blue-600 p-3 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hidden lg:block"
-              style={{ marginRight: '-20px' }}
-            >
-              <i className="fas fa-chevron-right text-lg"></i>
-            </button>
-
-            {/* Responsive Services Container */}
-            <div
-              id="services-container"
-              className="
-                /* Mobile: Stack vertically */
-                flex flex-col gap-6 sm:gap-8
-                /* Tablet: 2 columns grid */
-                sm:grid sm:grid-cols-2 sm:flex-none
-                /* Desktop: Horizontal scroll with 3 visible */
-                lg:flex lg:flex-row lg:gap-8 lg:overflow-x-auto lg:scrollbar-hide lg:pb-4
-              "
-              style={{
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-                WebkitScrollbar: { display: 'none' }
-              }}
-            >
-              {/* Web Development Card */}
-              <Link 
-                to="/web-development" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-laptop-code text-blue-600 text-xl"></i>
                 </div>
@@ -193,11 +136,11 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* Quality Assurance Card */}
-              <Link 
-                to="/quality-assurance" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
+            {/* Quality Assurance Card */}
+            <Link 
+              to="/quality-assurance" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-check-double text-blue-600 text-xl"></i>
                 </div>
@@ -215,11 +158,11 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* Ecommerce Website Development Card */}
-              <Link 
-                to="/ecommerce" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
+            {/* Ecommerce Website Development Card */}
+            <Link 
+              to="/ecommerce" 
+              className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block"
+            >
                 <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                   <i className="fas fa-shopping-cart text-blue-600 text-xl"></i>
                 </div>
@@ -237,94 +180,8 @@ const Home = () => {
                 </span>
               </Link>
 
-              {/* HRMS Card */}
-              <Link 
-                to="/hrms" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
-                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <i className="fas fa-users-cog text-blue-600 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Human Resource Management System</h3>
-                <p className="text-gray-600 mb-4">
-                  Comprehensive HRMS solutions to streamline your HR operations and enhance employee experience.
-                </p>
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="HR professionals using HRMS dashboard on multiple devices"
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                  Learn more <i className="fas fa-arrow-right ml-1"></i>
-                </span>
-              </Link>
-
-              {/* Mobile App Development Card */}
-              <Link 
-                to="/mobile-development" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
-                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <i className="fas fa-mobile-alt text-blue-600 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Mobile App Development</h3>
-                <p className="text-gray-600 mb-4">
-                  Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.
-                </p>
-                <img 
-                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Mobile app development workspace with smartphones and code"
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                  Learn more <i className="fas fa-arrow-right ml-1"></i>
-                </span>
-              </Link>
-
-              {/* Digital Marketing Card */}
-              <Link 
-                to="/digital-marketing" 
-                className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block w-full sm:w-auto lg:flex-shrink-0 lg:w-80"
-              >
-                <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <i className="fas fa-bullhorn text-blue-600 text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Digital Marketing</h3>
-                <p className="text-gray-600 mb-4">
-                  Comprehensive digital marketing strategies to boost your online presence and drive business growth.
-                </p>
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Digital marketing analytics dashboard with charts and graphs"
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
-                  Learn more <i className="fas fa-arrow-right ml-1"></i>
-                </span>
-              </Link>
-            </div>
           </div>
 
-          {/* Scroll indicators for desktop */}
-          <div className="hidden lg:flex justify-center mt-6">
-            <div className="flex items-center space-x-4 text-sm text-gray-500">
-              <span className="flex items-center">
-                <i className="fas fa-chevron-left mr-1"></i>
-                Scroll to see more services
-                <i className="fas fa-chevron-right ml-1"></i>
-              </span>
-            </div>
-          </div>
-
-          {/* Mobile scroll hint */}
-          <div className="lg:hidden flex justify-center mt-6">
-            <div className="text-sm text-gray-500 text-center">
-              <span className="flex items-center justify-center">
-                <i className="fas fa-hand-point-right mr-2"></i>
-                Swipe to see more services
-              </span>
-            </div>
-          </div>
         </div>
       </section>
 
