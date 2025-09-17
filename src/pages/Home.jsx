@@ -232,7 +232,7 @@ const Home = () => {
               </Link>
 
               {/* HRMS Card */}
-              <Link 
+              {/* <Link 
                 to="/hrms" 
                 className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer block flex-shrink-0"
                 style={{ minWidth: '300px', width: '300px' }}
@@ -252,7 +252,7 @@ const Home = () => {
                 <span className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center">
                   Learn more <i className="fas fa-arrow-right ml-1"></i>
                 </span>
-              </Link>
+              </Link> */}
 
               {/* Add more service cards here as needed */}
             </div>
